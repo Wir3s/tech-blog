@@ -1,0 +1,8 @@
+[
+    {
+        "name": "Understanding JSON",
+        "description": "JSON is a thing that does a thing",
+        "user_id": 1,
+        "date_created": "February 4, 2023"
+    }
+]

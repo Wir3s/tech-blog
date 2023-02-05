@@ -1,6 +1,6 @@
 const path = require("path");
 const express = require("express");
-const session = require('express-session');
+const session = require("express-session");
 const exphbs = require("express-handlebars");
 const routes = require("./controllers");
 // const helpers = require("./utils/helpers");
@@ -10,19 +10,24 @@ const PORT = process.env.PORT || 3001;
 
 const sequelize = require("./config/connection");
 
-const SequelizeStore = require('connect-session-sequelize')(session.Store);
+const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
 const hbs = exphbs.create({});
 
 // Configure and link session obj with sequelize store
 const sess = {
-  secret: 'All the secrets',
-  cookie: {},
+  secret: "All the secrets",
+  cookie: {
+    maxAge: 300000,
+    httpOnly: true,
+    secure: false,
+    sameSite: "strict",
+  },
   resave: false,
   saveUnitialized: true,
   store: new SequelizeStore({
-    db: sequelize
-  })
+    db: sequelize,
+  }),
 };
 
 // Add express-session and store as express.js middleware
