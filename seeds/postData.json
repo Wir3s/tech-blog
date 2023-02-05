@@ -1,8 +1,10 @@
 [
     {
         "name": "Understanding JSON",
-        "description": "JSON is a thing that does a thing",
-        "user_id": 1,
-        "date_created": "February 4, 2023"
+        "description": "JSON is a thing that does a thing"
+    },
+    {
+        "name": "Promises",
+        "description": "Promises are things and such"
     }
 ]
