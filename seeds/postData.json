@@ -1,10 +1,12 @@
 [
     {
         "name": "Understanding JSON",
-        "description": "JSON is a thing that does a thing"
+        "description": "JSON is a thing that does a thing",
+        "date": "January 28, 2023"
     },
     {
         "name": "Promises",
-        "description": "Promises are things and such"
+        "description": "Promises are things and such",
+        "date": "February 2, 2023"
     }
 ]

@@ -13,8 +13,13 @@
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#dashboard">Dashboard</a></li>
-                <li><a href="#login">Login</a></li>
+                
+                <!-- Conditional for login and logout links -->
+                {{#if logged_in}}                
                 <li><a href="#logout">Logout</a></li>
+                {{else}}
+                <li><a href="/login">Login</a></li>
+                {{/if}}
             </ul>
         </nav>
     </header>
@@ -22,5 +27,8 @@
 {{{ body }}}
 
 
+    {{#if logged_in}}
+    <script src="/js/logout.js"></script>
+    {{/if}}
 </body>
 </html>
