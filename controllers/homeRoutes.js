@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const { Post, User } = require("../models");
-//const withAuth = require('../utils/auth');
+const withAuth = require('../utils/auth');
 
 router.get("/", async (req, res) => {
   try {
@@ -26,7 +26,7 @@ router.get("/", async (req, res) => {
 router.get("/login", (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
-    res.redirect("/");
+    res.redirect("/dashboard");
     return;
   }
 

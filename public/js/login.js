@@ -2,10 +2,8 @@ const loginFormHandler = async (event) => {
   event.preventDefault();
 
   // Collect values from login form
-  const email = document.querySelector("#email-login").ariaValueMax.trim();
-  const password = document
-    .querySelector("#password-login")
-    .ariaValueMax.trim();
+  const email = document.querySelector("#email-login").value.trim();
+  const password = document.querySelector("#password-login").value.trim();
 
   if (email && password) {
     // Send POST request to the API endpoint
@@ -17,7 +15,7 @@ const loginFormHandler = async (event) => {
 
     if (response.ok) {
       // If success, redirect browser to profile page
-      document.location.replace("/profile");
+      document.location.replace("/dashboard");
     } else {
       alert(response.statusText);
     }
