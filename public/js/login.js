@@ -10,11 +10,11 @@ const loginFormHandler = async (event) => {
     const response = await fetch("/api/users/login", {
       method: "POST",
       body: JSON.stringify({ email, password }),
-      headers: { "Content-Type": "applications/json" },
+      headers: { "Content-Type": "application/json" },
     });
 
     if (response.ok) {
-      // If success, redirect browser to profile page
+      // If success, redirect browser to dashboard page
       document.location.replace("/dashboard");
     } else {
       alert(response.statusText);

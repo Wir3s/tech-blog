@@ -11,12 +11,13 @@
         <h1>Tech Blog</h1>
         <nav>
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="/">Home</a></li>
                 
-                <!-- Conditional for login and logout links -->
+                
+                <!-- Conditional for logged in and logout links -->
                 {{#if logged_in}}                
                 <li><button class="no-button" id="logout">Logout</button></li>
+                <li><a href="/dashboard">Dashboard</a></li>
                 {{else}}
                 <li><a href="/login">Login</a></li>
                 {{/if}}
