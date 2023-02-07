@@ -2,11 +2,13 @@
     {
         "name": "Understanding JSON",
         "description": "JSON is a thing that does a thing",
-        "date": "January 28, 2023"
+        "date": "January 28, 2023",
+        "user_id": 1
     },
     {
         "name": "Promises",
         "description": "Promises are things and such",
-        "date": "February 2, 2023"
+        "date": "February 2, 2023",
+        "user_id": 2
     }
 ]

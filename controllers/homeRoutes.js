@@ -52,4 +52,8 @@ router.get("/dashboard", withAuth, async (req, res) => {
   }
 });
 
+router.get("/newpost", (req, res) => {
+  res.render("newpost");
+});
+
 module.exports = router;
