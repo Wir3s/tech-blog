@@ -1,7 +1,26 @@
 <h4>Logged In!</h4>
 
 
+Your username: {{name}}
+
 <!-- Display all posts by user, if any exist! -->
+  {{#if posts.length}}
+  <div class="col-md-6 project-list">
+    <h3>Posts:</h3>
+
+    {{#each posts as |post|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h4>{{post.name}}</h4>
+        <p> {{post.description}}</p>
+      </div>
+      <div class="col-md-4">
+  <!--      <button class="btn btn-sm btn-danger" data-id="{{post.id}}">DELETE</button> -->
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
 
 <div class="new-post">
  <a href="/newpost">

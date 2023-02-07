@@ -36,15 +36,15 @@ router.get("/login", (req, res) => {
 
 router.get("/dashboard", withAuth, async (req, res) => {
   try {
-    const postData = await Post.findByPk(req.session.user_id, {
+    const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ["password"] },
-      include: [{ model: User }],
+      include: [{ model: Post }],
     });
 
-    const post = postData.get({ plain: true });
+    const user = userData.get({ plain: true });
 
     res.render("dashboard", {
-      ...post,
+      ...user,
       logged_in: true,
     });
   } catch (err) {
@@ -53,7 +53,7 @@ router.get("/dashboard", withAuth, async (req, res) => {
 });
 
 router.get("/newpost", (req, res) => {
-  res.render("newpost");
+  res.render("newpost")
 });
 
 module.exports = router;
