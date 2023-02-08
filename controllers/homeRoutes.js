@@ -52,22 +52,44 @@ router.get("/dashboard", withAuth, async (req, res) => {
   }
 });
 
-router.get('/post/:id', async (req, res) => {
+router.get("/dashboard/post/:id", async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
       include: [
         {
           model: User,
-          attributes: ['name'],
+          attributes: ["name"],
         },
       ],
     });
 
     const post = postData.get({ plain: true });
 
-    res.render('viewpost', {
+    res.render("dashpost", {
       ...post,
-      logged_in: req.session.logged_in
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get("/post/:id", async (req, res) => {
+  try {
+    const postData = await Post.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ["name"],
+        },
+      ],
+    });
+
+    const post = postData.get({ plain: true });
+
+    res.render("viewpost", {
+      ...post,
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -75,7 +97,7 @@ router.get('/post/:id', async (req, res) => {
 });
 
 router.get("/newpost", (req, res) => {
-  res.render("newpost")
+  res.render("newpost");
 });
 
 module.exports = router;

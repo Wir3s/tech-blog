@@ -9,15 +9,15 @@ Your username: {{name}}
     <h3>Posts:</h3>
 
     {{#each posts as |post|}}
-    <div class="row mb-2 del-post">
+    <a href="/dashboard/post/{{post.id}}">
+    <div class="row mb-2">
       <div class="col-md-8">
         <h4>{{post.name}}</h4>
         <p> {{post.description}}</p>
       </div>
-      <div class="col-md-4">
-    <button class="btn btn-sm btn-danger" data-id="{{post.id}}">Delete Post</button>
-      </div>
+
     </div>
+    </a>
     {{/each}}
   </div>
   {{/if}}
@@ -28,4 +28,3 @@ Your username: {{name}}
  </a>
 </div>
 
-<script src="/js/deletepost.js"></script>

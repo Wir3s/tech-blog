@@ -1,23 +1,27 @@
 [
     {
+        "id": 1,
         "name": "Understanding JSON",
         "description": "JSON is a thing that does a thing",
         "date": "January 28, 2023",
         "user_id": 1
     },
     {
+        "id": 2,
         "name": "Promises",
         "description": "Promises are things and such",
         "date": "February 2, 2023",
         "user_id": 2
     },
     {
+        "id": 3,
         "name": "JavaScript",
         "description": "JavaScript is a language used in web development",
         "date": "January 10, 2023",
         "user_id": 2
     },
     {
+        "id": 4,
         "name": "Routes",
         "description": "Routes define where a browser should point to using...",
         "date": "January 22, 2023",
