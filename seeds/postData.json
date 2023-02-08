@@ -10,5 +10,17 @@
         "description": "Promises are things and such",
         "date": "February 2, 2023",
         "user_id": 2
+    },
+    {
+        "name": "JavaScript",
+        "description": "JavaScript is a language used in web development",
+        "date": "January 10, 2023",
+        "user_id": 2
+    },
+    {
+        "name": "Routes",
+        "description": "Routes define where a browser should point to using...",
+        "date": "January 22, 2023",
+        "user_id": 1
     }
 ]
