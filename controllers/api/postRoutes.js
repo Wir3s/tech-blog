@@ -18,8 +18,7 @@ router.post("/", withAuth, async (req, res) => {
 router.put("/:id", withAuth, async (req, res) => {
   try {
     const updatePost = await Post.update({
-      ...req.body,
-      user_id: req.session.user_id,
+      ...req.body
     });
 
     res.status(200).json(updatePost);
