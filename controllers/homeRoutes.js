@@ -62,9 +62,8 @@ router.get("/dashboard/post/:id", async (req, res) => {
         },
       ],
     });
-
     const post = postData.get({ plain: true });
-    console.log(post); // Check to see what's coming back
+    console.log(post);
     res.render("dashpost", {
       ...post,
       logged_in: req.session.logged_in,
