@@ -33,16 +33,17 @@ router.post("/:id/comment", async (req, res) => {
   }
 });
 
-router.put("/:id", withAuth, async (req, res) => {
+router.put("/:id", async (req, res) => {
   try {
-    const updatePost = await Post.update(req.body, {
+    const updatePost = await Post.update(req.body)
+      //{
       //      ...req.body,
-      //     user_id: req.session.user_id,
-      where: {
-        id: req.params.id,
-        user_id: req.session.user_id,
-      },
-    });
+   
+      // where: {
+      //   id: req.params.id,
+      //   user_id: req.session.user_id,
+      // },
+   // });
 
     res.status(200).json(updatePost);
   } catch (err) {
