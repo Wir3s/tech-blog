@@ -7,6 +7,7 @@ const updatePostHandler = async (event) => {
 
 
   console.log(id);
+  if (name && description) {
   const response = await fetch(`/api/posts/${id}`, {
     method: "PUT",
     body: JSON.stringify({ name, description }),
@@ -20,6 +21,7 @@ const updatePostHandler = async (event) => {
   } else {
     alert("Failed to update post");
   }
+ }
 };
 
 document

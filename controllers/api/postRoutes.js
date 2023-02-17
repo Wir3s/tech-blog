@@ -21,9 +21,6 @@ router.post("/:id/comment", async (req, res) => {
       ...req.body,
       comment_text: req.body.comment_text,
       post_id: req.body.post_id,
-      // where: {
-      //   id: req.params.id,
-      // },
     });
     console.log(newComment);
 
@@ -33,14 +30,16 @@ router.post("/:id/comment", async (req, res) => {
   }
 });
 
-router.put("/:id", withAuth, async (req, res) => {
+router.put("/:id", async (req, res) => {
   try {
-    const updatePost = await Post.update(req.body, {
-      //      ...req.body,
-      //     user_id: req.session.user_id,
+    const updatePost = await Post.update(
+      {
+         name: req.body.name,
+         description: req.body.description,
+      },
+      {
       where: {
         id: req.params.id,
-        user_id: req.session.user_id,
       },
     });
 

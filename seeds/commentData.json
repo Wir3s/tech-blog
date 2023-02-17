@@ -1,14 +1,22 @@
 [
     {
         "post_id": 1,
-        "comment_text": "Great ideas"
+        "comment_text": "Great ideas",
+        "user_id": 1
     },
     {
         "post_id": 1,
-        "comment_text": "I completely agree"
+        "comment_text": "I completely agree",
+        "user_id": 2
     },
     {
         "post_id": 2,
-        "comment_text": "Excellent post!"
+        "comment_text": "Excellent post!",
+        "user_id": 2
+    },
+    {
+        "post_id": 2,
+        "comment_text": "TOO true!",
+        "user_id": 1
     }
 ]

@@ -14,13 +14,18 @@ Comment.init(
     post_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: "user",
+        model: "post",
         key: "id",
       },
     },
     comment_text: {
       type: DataTypes.STRING,
+      allowNull: false,
     },
+    user_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    }
   },
   {
     sequelize,
