@@ -10,5 +10,12 @@
         "name": "Mario",
         "email": "toad@castle.com",
         "password": "password1234"
+    },
+    {
+        "id": 3,
+        "name": "Waluigi",
+        "email": "wa@wa.com",
+        "password": "password1234"
     }
+
 ]

@@ -19,8 +19,9 @@
                 
                 <!-- Conditional for logged in and logout links -->
                 {{#if logged_in}}                
-                <li><button class="no-button" id="logout">Logout</button></li> |
+                
                 <li><a href="/dashboard">Dashboard</a></li>
+                <li><button class="button" id="logout">Logout</button></li> 
                 {{else}}
                 <li><a href="/login">Login</a></li>
                 {{/if}}

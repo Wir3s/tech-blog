@@ -1,5 +1,5 @@
 const updatePostHandler = async (event) => {
-  event.preventDefault();
+ event.preventDefault();
 
   const name = document.querySelector("#name-post").value.trim();
   const description = document.querySelector("#content-post").value.trim();

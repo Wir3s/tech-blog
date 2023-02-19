@@ -17,11 +17,19 @@ router.post("/", withAuth, async (req, res) => {
 
 router.post("/:id/comment", async (req, res) => {
   try {
-    const newComment = await Comment.create({
-      ...req.body,
-      comment_text: req.body.comment_text,
-      post_id: req.body.post_id,
-    });
+    const newComment = await Comment.create(
+      {
+        ...req.body,
+        comment_text: req.body.comment_text,
+        post_id: req.body.post_id,
+
+      },
+      {
+        where: {
+          id: req.params.id,
+        },
+      }
+    );
     console.log(newComment);
 
     res.status(200).json(newComment);
@@ -34,14 +42,15 @@ router.put("/:id", async (req, res) => {
   try {
     const updatePost = await Post.update(
       {
-         name: req.body.name,
-         description: req.body.description,
+        name: req.body.name,
+        description: req.body.description,
       },
       {
-      where: {
-        id: req.params.id,
-      },
-    });
+        where: {
+          id: req.params.id,
+        },
+      }
+    );
 
     res.status(200).json(updatePost);
   } catch (err) {
