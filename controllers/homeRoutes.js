@@ -24,6 +24,7 @@ router.get("/", async (req, res) => {
   }
 });
 
+// Login page
 router.get("/login", (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
@@ -34,6 +35,7 @@ router.get("/login", (req, res) => {
   res.render("login");
 });
 
+// User dashboard 
 router.get("/dashboard", withAuth, async (req, res) => {
   try {
     const userData = await User.findByPk(req.session.user_id, {
@@ -52,6 +54,7 @@ router.get("/dashboard", withAuth, async (req, res) => {
   }
 });
 
+// Specific post by ID from user dashboard
 router.get("/dashboard/post/:id", async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
@@ -73,6 +76,7 @@ router.get("/dashboard/post/:id", async (req, res) => {
   }
 });
 
+//
 router.get("/post/:id", async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
