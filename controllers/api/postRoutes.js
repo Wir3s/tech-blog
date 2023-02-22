@@ -22,7 +22,6 @@ router.post("/:id/comment", async (req, res) => {
         ...req.body,
         comment_text: req.body.comment_text,
         post_id: req.params.id,
-        user_id: req.session.user_id,
 
       },
       {
