@@ -10,7 +10,7 @@ const commentHandler = async (event) => {
     console.log(comment_text);
     const response = await fetch(`/api/posts/${id}/comment`, {
       method: "POST",
-      body: JSON.stringify({ comment_text }),
+      body: JSON.stringify({ comment_text: comment_text }),
       headers: {
         "Content-Type": "application/json",
       },
@@ -28,6 +28,6 @@ function unHide() {
   document.getElementById("hideCom").style.visibility = "visible";
 }
 
-document.querySelector("#commentBtn").addEventListener("click", commentHandler);
+document.querySelector("#commentBtn").addEventListener("submit", commentHandler);
 
 document.querySelector("#unHide").addEventListener("click", unHide);
