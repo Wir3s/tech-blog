@@ -7,29 +7,30 @@
 
 {{#if logged_in}}
 <div>
-  <button>Leave Comment</button>
+  <button id="unHide">Leave Comment</button>
 </div>
 {{/if}}
 </div>
 
 
-<div class="col-4" style="visibility:visible">
+<div class="col-4">
 {{#if comments.length}}
 {{#each comments as |comment| }}
 <div> <p> {{comment_text}} </p><p>Posted by: {{../user.name}}</p>   </div>
   {{/each}}
 {{/if}}
-      <form class="form comment-form" style="visibility:visible">
+    <div id="hideCom" style="visibility:hidden">
+      <form class="form comment-form">
       <div class="form-group">
         <label for="comment-body">Comment:</label>
         <input class="form-input" type="text" id="comment-body" />
       </div>
       
       
-        <button class="btn btn-primary" type="submit">Create Comment</button>
+        <button class="btn btn-primary" type="click" data-id="{{id}}" id="commentBtn">Create Comment</button>
      
     </form>
-
+  </div>
 </div>
 
 
