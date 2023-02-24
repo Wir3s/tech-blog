@@ -23,7 +23,7 @@ No installation is required, just visit the URL below.
 
 Navigate to: [https://taking-notes.herokuapp.com/](https://tranquil-ocean-01522.herokuapp.com/login) and login or create an account
 
-![Screenshot1](./images/note-sc1.png)
+![Screenshot1](./images/sc1.png)
 
 ## Contributing
 
